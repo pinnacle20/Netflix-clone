@@ -1,0 +1,15 @@
+<header class="h-17 bg-black sticky top-0 flex text-white items-center justify-between">
+  <div class="flex text-white gap-9 items-center">
+    <img width="120" src="assets/netflix-logo.png" alt="netflix-logo" />
+    <ul class="text-sm cursor-pointer hover:text-gray-400" *ngFor="let item of navList">
+      <li>{{ item }}</li>
+    </ul>
+  </div>
+  <div class="flex gap-3 items-center">
+    <span> Welcome <strong>{{name}}</strong></span>
+    <img width="40px" src={{profile}} alt="user-profile">
+    <div>|</div>
+    <button (click)="signOut()">Sign Out</button>
+    &nbsp;
+  </div>
+</header>
