@@ -14,10 +14,12 @@ export class BrowseComponent implements OnInit {
   name = JSON.parse(sessionStorage.getItem('loggedinUser')!).name;
   imgUrl = JSON.parse(sessionStorage.getItem('loggedinUser')!).picture;
   email = JSON.parse(sessionStorage.getItem('loggedinUser')!).email;
+  popularMovies: any = [];
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((resp) => {
-      console.log(resp);
+      this.popularMovies = resp.results;
+      console.log('Passed thing ' , this.popularMovies)
     });
   }
 

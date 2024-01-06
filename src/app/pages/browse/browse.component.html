@@ -1,3 +1,4 @@
 <app-header [name]="name" [profile]="imgUrl" (onSignOut)="signOut()"></app-header>
 <app-banner></app-banner> 
-<app-movie-carousel></app-movie-carousel>
+<app-movie-carousel [popularMovies]="popularMovies" [namE]="popularMovies.at(0).title"></app-movie-carousel>
+
