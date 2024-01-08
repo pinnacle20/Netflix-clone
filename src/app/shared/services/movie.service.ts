@@ -23,5 +23,16 @@ export class MovieService {
       options
     );
   }
-  
+
+  getTvShows() {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc',
+      options
+    );
+  }
+
+  getVideos(movieId: any) {
+    var url = `https://api.themoviedb.org/3/movie/${movieId}/videos?language=en-US`;
+    return this.http.get<any>(url, options);
+  }
 }

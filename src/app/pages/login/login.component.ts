@@ -11,12 +11,12 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    if(sessionStorage.getItem('loggedinUser')!=null){
+   if(sessionStorage.getItem('loggedinUser')!=null){
       this.router.navigate(['browse'])
     }
     google.accounts.id.initialize({
       client_id:
-        '',
+        '303149220039-f6qgsvvgp0cfk96upbiijpmflc0b2aql.apps.googleusercontent.com',
       callback: (resp: any) => this.hangleLogin(resp),
     });
     google.accounts.id.renderButton(document.getElementById('google-btn'), {

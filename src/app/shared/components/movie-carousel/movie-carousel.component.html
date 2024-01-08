@@ -1,14 +1,27 @@
 <div class="w-full h-full pt-[17cm] text-black bg-gray-900">
   <div class="mb-[12px] text-xl text-white font-bold">Popular Movies</div>
   <swiper [slidesPerView]="6" [spaceBetween]="10" [navigation]="true" [pagination]="{ clickable: true }"
-    [pagination]="false">
-    <ng-template swiperSlide *ngFor="let item of popularMovies" class="flex items-center justify-center">
-      <div class="w-56 h-[420px] bg-gray-900 overflow-hidden bg-white border border-gray-200 rounded-lg shadow ">
+    [pagination]="false" >
+    <ng-template swiperSlide *ngFor="let item of popularMovies" class="flex items-center justify-center ">
+      <div class=" w-56 h-[420px] bg-gray-900 overflow-hidden bg-white border border-gray-200 rounded-lg shadow ">
         <a href="#">
           <img class="rounded-t-lg" src="{{item.poster_path | image }} " alt="" />
         </a>
-        <div class="pt-[30px] px-[10px] h-[50px] overflow flex items-center justify-center text-white ">
+        <div class="pt-[30px] px-[10px] h-[50px] overflow flex items-center justify-center text-black font-bold">
           {{item.title | description:45}} </div>
+      </div>
+    </ng-template>
+  </swiper>
+  <div class="mb-[12px] mt-[10px] text-xl text-white font-bold">TV Shows</div>
+  <swiper [slidesPerView]="6" [spaceBetween]="10  " [navigation]="true" [pagination]="{ clickable: true }"
+    [pagination]="false">
+    <ng-template swiperSlide *ngFor="let item of TvShows  " class="flex items-center justify-center">
+      <div class="w-56 h-[420px] bg-white overflow-hidden border border-gray-200 rounded-lg shadow font-bold">
+        <a href="#">
+          <img class="rounded-t-lg" src="{{item.poster_path | image }} " alt="" />
+        </a>
+        <div class="pt-[30px] px-[10px] h-[50px] overflow flex items-center justify-center text-black ">
+          {{item.name | description:45}} </div>
       </div>
     </ng-template>
   </swiper>

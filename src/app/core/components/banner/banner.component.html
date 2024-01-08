@@ -1,15 +1,7 @@
-<iframe class="h-full w-full absolute"
-  src="https://www.youtube.com/embed/Dydmpfo68DA?autoplay=1&mute=1&loop=1&controls=0"></iframe>
-
+<iframe class="h-full w-full absolute" [src]="videoLink | safe"></iframe>
 <div class="absolute h-full w-full text-white px-48 pt-40 bg-gradient-to-r from-black">
-  <h1 class="text-4xl font-bold">Animal</h1>
-  <p class="w-1/4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste dolorem fugiat aliquam
-    exercitationem
-    sint rem libero sequi assumenda voluptatibus eligendi nam cumque sunt consectetur, natus inventore quos id
-    excepturi
-    aliquid?
-    Illo officia Exercitationem mollitia excepturi nulla porro, suscipit quis cupiditate facere, recusandae deleniti
-    dignissimos, expedita nisi veritatis.
+  <h1 class="text-4xl font-bold">{{title}}</h1>
+  <p class="w-1/4">{{desc | description:500}}
   </p>
   <div class="mt-2 flex gap-4">
     <button class="bg-white rounded w-28 h-10 text-black font-bold hover:bg-opacity-60 transition-[1s]">

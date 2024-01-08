@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowseComponent } from './pages/browse/browse.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HeaderComponent } from './core/components/header/header.component';
-import { BannerComponent } from './core/components/banner/banner.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieCarouselComponent } from './shared/components/movie-carousel/movie-carousel.component';
 import { SwiperModule } from 'swiper/angular';
+import { BannerComponent } from './core/components/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,6 @@ import { SwiperModule } from 'swiper/angular';
     LoginComponent,
     BrowseComponent,
     HeaderComponent,
-    BannerComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +24,7 @@ import { SwiperModule } from 'swiper/angular';
     HttpClientModule,
     MovieCarouselComponent,
     SwiperModule,
+    BannerComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
