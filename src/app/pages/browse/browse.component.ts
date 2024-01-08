@@ -7,7 +7,7 @@ import { MovieService } from 'src/app/shared/services/movie.service';
   templateUrl: './browse.component.html',
   styleUrls: ['./browse.component.css'],
 })
-export class BrowseComponent implements OnInit {
+export class BrowseComponent implements OnInit, OnChanges {
   constructor(private auth: AuthService, private movieService: MovieService) {}
 
   name = JSON.parse(sessionStorage.getItem('loggedinUser')!).name;
@@ -36,6 +36,7 @@ export class BrowseComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((resp) => {
       this.popularMovies = resp.results;
+      console.log(this.popularMovies);
       this.movieId = this.popularMovies.at(0).id;
       this.desc = this.popularMovies.at(0).overview;
       this.title = this.popularMovies.at(0).original_title;
@@ -45,6 +46,12 @@ export class BrowseComponent implements OnInit {
     this.movieService.getTvShows().subscribe((resp) => {
       this.TvShows = resp.results;
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['movieId']) {
+      this.getVideoTrailer();
+    }
   }
 
   signOut() {
